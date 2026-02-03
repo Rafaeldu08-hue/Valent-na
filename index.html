@@ -1,0 +1,249 @@
+<html lang="en"><head>
+<meta charset="UTF-8">
+<title>💖 Valentínusardagur 💖</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #ff5f5f, #ffd6ff);
+  font-family: 'Comic Sans MS', 'Arial Rounded MT Bold', cursive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 30px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(255,0,120,0.3);
+  max-width: 340px;
+  position: relative;
+}
+
+h1 {
+  color: #ff2f92;
+}
+
+img {
+  width: 220px;
+  border-radius: 20px;
+  margin: 20px 0;
+}
+
+button {
+  font-size: 16px;
+  padding: 12px 20px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  margin: 6px;
+}
+
+#yes {
+  background: #ff2f92;
+  color: white;
+}
+
+#no {
+  background: #bdbdbd;
+  color: white;
+  position: absolute;
+}
+
+.action {
+  background: #ff5fa2;
+  color: white;
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+.content {
+  font-size: 14px;
+  color: #444;
+  margin-top: 15px;
+  max-height: 200px;
+  overflow-y: auto;
+  text-align: left;
+}
+
+.kiss {
+  position: absolute;
+  font-size: 40px;
+  animation: float 2s ease-out forwards;
+}
+
+@keyframes float {
+  0% { transform: scale(0.5) translateY(0); opacity: 1; }
+  100% { transform: scale(1.5) translateY(-150px); opacity: 0; }
+}
+
+.footer {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #999;
+  text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <!-- PAGE 1 -->
+  <div id="page1">
+    <h1>💌<br>Viltu vera mín Valentínusardagur?</h1>
+    <img id="cat" src="kThp08v.jpeg">
+    <br>
+    <button id="yes" onclick="goNext()">Já 😍</button>
+    <button id="no" onmouseover="moveNo()">Nei 🙄</button>
+  </div>
+
+  <!-- PAGE 2 -->
+  <div id="page2" class="hidden">
+    <h1>Ég elska þig svo mikið💖</h1>
+    <img src="Xs5kF5V.jpeg" alt="">
+
+    <button class="action" onclick="showLetter()">💌 Ástar kort</button>
+    <button class="action" onclick="showReasons()">💖 50 ástæður afhverju ég elska þig</button>
+    <button class="action" onclick="kiss()">😘 Koss</button>
+
+    <div id="content" class="content"></div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">Rafael</div>
+
+</div>
+
+<script>
+function moveNo() {
+  const no = document.getElementById("no");
+  no.style.left = Math.random() * 200 + "px";
+  no.style.top = Math.random() * 200 + "px";
+
+  // تغییر عکس وقتی No زده می‌شود
+  document.getElementById("cat").src = "Dvt0EBU.gif";
+}
+
+function goNext() {
+  document.getElementById("page1").classList.add("hidden");
+  document.getElementById("page2").classList.remove("hidden");
+}
+
+function showLetter() {
+  document.getElementById("content").innerHTML = `
+    <b>Til Kolku, ástina mína.</b><br><br>
+
+    Ég sit hér og reyni að setja í orð allar þessar tilfinningar sem krauma innra með mér.
+    Það er eins og ég hafi verið á þessari mögnuðu ástarferð sem hófst um leið og ég hitti þig,
+    og það sér ekki fyrir endann á henni.
+    <br><br>
+
+    Í alvöru, þú ert ekki bara hluti af lífi mínu lengur, þú ert allur heimurinn minn.
+    <br><br>
+
+    Brosið þitt? Algjör hápunktur dagsins míns.
+    Og hláturinn þinn? Eins og besta tónlist sem ég heyri, ég gæti hlustað á þinn hlatur endalaust.
+    Hvert einasta augnablik með þér er eitthvað sem ég vil halda í að eilífu.
+    Það gerir mig svo glaðan að geta séð þig gróa frá þessum unga aldri sem við kynntust.
+    Þú hefur sýnt mér hvernig það er að vera sannarlega ástfanginn,
+    og ég get aldrei þakkað þér nógu mikið fyrir það.
+    <br><br>
+
+    Það er ótrúlegt hvernig þú skilur mig, stundum jafnvel áður en ég hef áttað mig á
+    hvernig ég á að segja það sem ég er að hugsa.
+    Þú lætur mig finna fyrir svo mikilli ást og öryggi.
+    Þú ert eins og minn eigin innblástur sem hvetur mig til að elta draumana mína
+    rétt eins og þú gerir með þína.
+    <br><br>
+
+    Svo á meðan ég skrifa þetta, skaltu vita að ég elska þig meira en ég get orðað.
+    Ég er svo spenntur að lifa þessu lífi með þér og vera saman til elífu og enda.
+    Þú ert sannarlega allt fyrir mig.
+    <br><br>
+
+    <b>Ég mun elska þig að eilífu, sama hvað gerist. ❤️❤️</b>
+    <b>Kveðja Rafael❤️</b>
+
+  `;
+}
+
+function showReasons() {
+  document.getElementById("content").innerHTML = `
+    <ol>
+        <li>Brosið þitt gerir daginn minn betri</li>
+        <li>Þú skilur mig</li>
+        <li>Þú færð mig til að hlæja</li>
+        <li>Þér þykir vænt um mig</li>
+        <li>Þú ert falleg bæði að innan og utan</li>
+        <li>Þú styður mig</li>
+        <li>Þú veitir mér innblástur</li>
+        <li>Þú lætur mér líða öruggum</li>
+        <li>Þú hvetur mig áfram </li>
+        <li>Þú ert góðhjörtuð</li>
+        <li>Þú ert klár</li>
+        <li>Þú ert sæt</li>
+        <li>Þú hlustar á mig</li>
+        <li>Þú gerir allt betra</li>
+        <li>Þú ert þolinmóð</li>
+        <li>Þú ert heiðarleg</li>
+        <li>Þú ert sérstök</li>
+        <li>Þú ert minn besti vinur</li>
+        <li>Þú ert friðurinn minn</li>
+        <li>Þú ert hamingjan mín</li>
+        <li>Röddin þín huggar mig</li>
+        <li>Hláturinn þinn er yndislegur</li>
+        <li>Þú hvetur mig áfram</li>
+        <li>Þú fullkomnar mig</li>
+        <li>Þú berð virðingu fyrir mér</li>
+        <li>Þú lætur mig finna að ég sé elskaður</li>
+        <li>Þú ert hugulsöm</li>
+        <li>Þú kemur mér á óvart</li>
+        <li>Þér þykir vænt um tilfinningar mínar</li>
+        <li>Þú lætur hjartað mitt slá hraðar</li>
+        <li>Þú gerir mig stoltan</li>
+        <li>Þú ert hlýhjörtuð</li>
+        <li>Þú ert sólskinið mitt</li>
+        <li>Þú ert draumurinn minn</li>
+        <li>Þú lætur mig finna að ég sé heppinn</li>
+        <li>Þú róar mig</li>
+        <li>Þú gerir mig sterkari</li>
+        <li>Þú ert einstök</li>
+        <li>Þú ert uppáhalds manneskjan mín</li>
+        <li>Þú lætur ástina vera einfalda</li>
+        <li>Þú ert huggunin mín</li>
+        <li>Þú ert gleðin mín</li>
+        <li>Þú gerir lífið sætara</li>
+        <li>Þú ert eilífðin mín</li>
+        <li>Þú ert hjartað mitt</li>
+        <li>Þú lætur mig finna að ég sé lifandi</li>
+        <li>Þú ert allt fyrir mig</li>
+        <li>Þú ert Valentínusinn minn</li>
+        <li>Ég elska þig ❤️</li>
+    </ol>
+
+  `;
+}
+
+function kiss() {
+  const kiss = document.createElement("div");
+  kiss.className = "kiss";
+  kiss.innerText = "💋";
+  kiss.style.left = Math.random() * 80 + "vw";
+  kiss.style.top = "70vh";
+  document.body.appendChild(kiss);
+
+  setTimeout(() => kiss.remove(), 2000);
+}
+</script>
+
+
+</body></html>
